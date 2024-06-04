@@ -1,0 +1,17 @@
+name: test_util
+description: Helpers and utilities for testing.
+repository: https://github.com/alexeyinkin/dart-test-util.git
+version: 0.1.0
+
+environment:
+  sdk: ^3.0.0
+
+topics:
+  - testing
+  - cli
+
+dependencies:
+  test: ^1.25.5
+
+dev_dependencies:
+  total_lints: ^3.4.0
