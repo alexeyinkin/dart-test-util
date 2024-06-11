@@ -2,12 +2,14 @@ import 'dart:io';
 
 import 'package:test/test.dart';
 
-import 'int_stream.dart';
+import 'stderr_contains.dart';
+import 'stream_list_int.dart';
 
 /// Runs a dart program, expects it to exit with a given code, and returns
 /// its [ProcessResult].
 Future<ProcessResult> dartRun(
   List<String> args, {
+  List<ExpectedFileErrors>? expectedErrors,
   int expectedExitCode = 0,
   List<String> experiments = const [],
   String? workingDirectory,
@@ -35,6 +37,10 @@ Future<ProcessResult> dartRun(
       '',
       reason: 'For the zero exit code, stderr is expected to be empty',
     );
+  }
+
+  if (expectedErrors != null) {
+    expect(stderr, stderrContains(errors: expectedErrors));
   }
 
   return ProcessResult(

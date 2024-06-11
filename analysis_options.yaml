@@ -3,3 +3,7 @@ include: package:total_lints/package.yaml
 linter:
   rules:
     avoid_print: false
+
+analyzer:
+  exclude:
+    - test/stderr_contains/example/*

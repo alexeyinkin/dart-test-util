@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:test/test.dart';
 
-import 'int_stream.dart';
+import 'stream_list_int.dart';
 
 /// Runs 'dart pub get' and expect it to succeed.
 Future<void> dartPubGet({
